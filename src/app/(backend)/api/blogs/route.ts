@@ -11,3 +11,15 @@ export const GET = async (request: NextRequest) => {
         return new Response("Failed to fetch blogs", { status: 500 });
     }
 }
+
+export const POST = async (request: NextRequest) => {
+    try {
+        await connectToDB();
+        const {title,tags,author,content,} = await request.json();
+        const newBlog = new Blog({title,tags,author,content,});
+        await newBlog.save();
+        return new Response(JSON.stringify(newBlog), { status: 201 });
+    } catch (error:any) {
+        return new Response(error.message, { status: 500 });
+    }
+}

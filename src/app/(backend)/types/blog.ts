@@ -4,7 +4,7 @@ export interface BlogType extends Document {
     title: string;
     slug: string;
     content: string;
-    author: Types.ObjectId; // Reference to User
+    author: string //Types.ObjectId; // Reference to User
     tags?: string[];
     image?: string;
     published?: boolean;

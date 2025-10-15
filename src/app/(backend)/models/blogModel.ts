@@ -10,7 +10,7 @@ const blogSchema = new Schema<BlogType>(
     },
     slug: { 
         type: String, 
-        required: true, 
+        // required: true, 
         unique: true, 
         lowercase: true 
     },
@@ -19,8 +19,8 @@ const blogSchema = new Schema<BlogType>(
         required: true 
     },
     author: { 
-        type: Schema.Types.ObjectId, 
-        ref: 'User', 
+        type: String, //Schema.Types.ObjectId, 
+        // ref: 'User', 
         required: true 
     },
     tags: [{ 
