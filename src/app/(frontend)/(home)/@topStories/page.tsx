@@ -1,11 +1,14 @@
+import { BlogCarousel } from "@/components/blog-carousel";
+import { TopBlogCard } from "@/components/top-blogs";
+import { topStories } from "@/lib/blogData";
+
 export default function TopStoriesPage() {
   return (
-    <div>
+    <div className="w-full my-10">
       <h1 className="text-3xl font-bold mb-4">Top Stories</h1>
-      <p className="text-lg">
-        Welcome to the Top Stories section! Here you'll find the most popular
-        and trending stories from our community.
-      </p>
+      <div className="w-[90%] mx-auto ">
+        <BlogCarousel posts={topStories} />
+      </div>
     </div>
   );
 }

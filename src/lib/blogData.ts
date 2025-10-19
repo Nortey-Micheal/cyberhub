@@ -1,14 +1,16 @@
 export type BlogType = {
-    title: string;
-    slug: string;
-    content: string;
-    author: string //Types.ObjectId; // Reference to User
-    tags?: string[];
-    image?: string;
-    published?: boolean;
-    createdAt?: Date;
-    updatedAt?: Date;
-    readingTime?: string | "10";
+  title: string;
+  slug?: string;
+  content?: string;
+  author: string //Types.ObjectId; // Reference to User
+  tags?: string[];
+  image?: string;
+  published?: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
+  readingTime?: string | "10";
+  views?: number;
+  _id?: string;
 }
 
 export const latestStories: BlogType[] = [
@@ -110,7 +112,7 @@ export const topStories: BlogType[] = [
     content: "AI integration in classrooms is reshaping student experiences...",
     author: "Kwame Ofori",
     tags: ["AI", "education", "innovation"],
-    image: "/images/top1.jpg",
+    image: "/images/top1.webp",
     published: true
   },
   {
@@ -146,7 +148,7 @@ export const topStories: BlogType[] = [
     content: "Digital literacy is no longer optional — it’s essential...",
     author: "Grace Amponsah",
     tags: ["skills", "technology", "students"],
-    image: "/images/top5.jpg",
+    image: "/images/top1.webp",
     published: true
   },
   {
@@ -155,7 +157,7 @@ export const topStories: BlogType[] = [
     content: "Success in learning often comes from strong self-discipline...",
     author: "Kwame Ofori",
     tags: ["habits", "motivation", "learning"],
-    image: "/images/top6.jpg",
+    image: "/images/top2.jpg",
     published: true
   },
   {
@@ -164,7 +166,7 @@ export const topStories: BlogType[] = [
     content: "Students using Cognitutor report better focus and grades...",
     author: "Admin",
     tags: ["confidence", "tutoring"],
-    image: "/images/top7.jpg",
+    image: "/images/top3.jpg",
     published: true
   },
   {
@@ -173,7 +175,7 @@ export const topStories: BlogType[] = [
     content: "Female developers are leading change in EdTech innovation...",
     author: "Grace Amponsah",
     tags: ["women", "tech", "education"],
-    image: "/images/top8.jpg",
+    image: "/images/top4.jpg",
     published: true
   },
   {
@@ -182,7 +184,7 @@ export const topStories: BlogType[] = [
     content: "After COVID-19, remote tutoring became the norm...",
     author: "Michael Nortey",
     tags: ["remote", "learning"],
-    image: "/images/top9.jpg",
+    image: "/images/top1.webp",
     published: true
   },
   {
@@ -191,7 +193,7 @@ export const topStories: BlogType[] = [
     content: "Cognitutor partners with NGOs to reach underserved schools...",
     author: "Admin",
     tags: ["partnership", "access"],
-    image: "/images/top10.jpg",
+    image: "/images/top2.jpg",
     published: true
   }
 ]

@@ -14,6 +14,7 @@ export default function InitialBlogsMainCard() {
           src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg"
           alt="Putin and protesters with signs during State of the Union comments"
           className="w-full h-full object-cover max-h-[400px] lg:max-h-[800px] "
+          width={800} height={600}
         />
         <div className="p-4 absolute bottom-0 bg-gradient-to-t from-slate-900 to-transparent w-full">
         {/* Headline */}

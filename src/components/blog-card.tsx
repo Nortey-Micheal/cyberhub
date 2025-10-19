@@ -15,7 +15,7 @@ export function BlogCard({ image, imageAlt, title, date, readingTime = "10" }: B
         <div className="flex gap-4">
             {/* Image */}
             <div className="flex-shrink-0 h-full">
-                <Image src={image || "/placeholder.svg"} alt={imageAlt} className="h-40 w-40 lg:w-75 object-cover rounded-md" />
+                <Image src={image || "/placeholder.svg"} alt={imageAlt} className="h-40 w-40 lg:w-75 object-cover rounded-md" width={500} height={500}/>
             </div>
 
             {/* Content */}
