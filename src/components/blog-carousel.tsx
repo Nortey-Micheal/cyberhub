@@ -61,7 +61,7 @@ export function BlogCarousel({ posts }: BlogCarouselProps) {
       <button
         onClick={handlePrev}
         disabled={currentIndex === 0}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 rounded-full bg-card p-2 text-card-foreground shadow-md transition-all hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute left-10 md:left-5 top-1/2 -translate-y-1/2 -translate-x-16 rounded-full bg-slate-600 p-2 text-card-foreground shadow-md transition-all hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Previous slide"
       >
         <ChevronLeft className="h-6 w-6" />
@@ -70,7 +70,7 @@ export function BlogCarousel({ posts }: BlogCarouselProps) {
       <button
         onClick={handleNext}
         disabled={currentIndex === maxIndex}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 rounded-full bg-card p-2 text-card-foreground shadow-md transition-all hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute right-10 md:right-5 top-1/2 -translate-y-1/2 translate-x-16 rounded-full bg-slate-600 p-2 text-card-foreground shadow-md transition-all hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Next slide"
       >
         <ChevronRight className="h-6 w-6" />

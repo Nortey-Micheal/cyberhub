@@ -46,7 +46,7 @@ export default function RootLayout({
             </ul>
           </nav>
         </header>
-        <main className="w-[97vw] max-w-[1300px] mx-auto ">{children}</main>
+        <main className="w-[97vw] max-w-[1300px] mx-auto overflow-hidden ">{children}</main>
       </body>
     </html>
   );
