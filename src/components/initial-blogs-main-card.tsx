@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function InitialBlogsMainCard() {
   return (
     <article className="lg:w-3/5 overflow-hidden rounded-lg border border-border bg-card shadow-lg h-fit">
@@ -8,7 +10,7 @@ export default function InitialBlogsMainCard() {
         </div>
 
         {/* News Image */}
-        <img
+        <Image
           src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg"
           alt="Putin and protesters with signs during State of the Union comments"
           className="w-full h-full object-cover max-h-[400px] lg:max-h-[800px] "
