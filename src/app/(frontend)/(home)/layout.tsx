@@ -13,7 +13,7 @@ export default function HomeLayout(
       }
 ) {
     return (
-        <>
+        <div className="w-full">
           {children}
           {initialBlogs}
           {topStories}
@@ -21,6 +21,6 @@ export default function HomeLayout(
             {latestStories}
             {upcomingStreaming}
           </div>
-        </>
+        </div>
     );
 }
