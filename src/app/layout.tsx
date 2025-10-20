@@ -1,8 +1,12 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { Search, ShoppingBag } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import LoginButton from "@/components/ui/loginButton";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +47,7 @@ export default function RootLayout({
             <ul className="flex items-center gap-6 lg:gap-14">
               <li><Search /></li>
               <li><ShoppingBag /></li>
+              <li><LoginButton/></li>
             </ul>
           </nav>
         </header>
