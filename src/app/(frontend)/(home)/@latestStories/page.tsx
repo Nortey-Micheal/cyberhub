@@ -3,7 +3,7 @@ import { latestStories } from "@/lib/blogData";
 
 export default function LatestStoriesPage() {
   return (
-    <div className="w-full mb-10">
+    <div className="w- mb-10">
       <h1 className="text-3xl font-bold mb-4">Latest Stories</h1>
       <div className="flex flex-col gap-4">
         {

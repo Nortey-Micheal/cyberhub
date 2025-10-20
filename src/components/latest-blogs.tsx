@@ -5,9 +5,9 @@ import { BlogType } from "@/lib/blogData"
 
 export function LatestBlogCard({ author, title, content, createdAt, readingTime, image }: BlogType) {
   return (
-    <div className=" flex flex-col-reverse lg:flex-row gap-6 p-0 bg-card border border-border rounded-lg hover:shadow-md transition-shadow">
+    <div className=" flex flex-col-reverse lg:flex-row lg:gap-6 p-0 bg-card border border-border rounded-lg hover:shadow-md transition-shadow">
       {/* Left Content */}
-        <div className="flex-1 w-3/4 flex flex-col p-5 gap-2">
+        <div className="flex-1 lg:w-3/4 flex flex-col p-5 gap-2">
             {/* Author Section */}
             <div className="flex items-center gap-3 ">
                 <Avatar className="h-10 w-10">
@@ -41,7 +41,7 @@ export function LatestBlogCard({ author, title, content, createdAt, readingTime,
         </div>
 
       {/* Right Image */}
-        <div className="h-45 w-1/4 flex-shrink-0">
+        <div className="h-45 lg:w-1/4 flex-shrink-0">
             <img src={image || "/placeholder.svg"} alt={title} className="h-full w-full object-cover rounded-md" />
         </div>
     </div>

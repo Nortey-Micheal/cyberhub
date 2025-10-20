@@ -13,7 +13,7 @@ export default function HomeLayout(
       }
 ) {
     return (
-        <div className="w-full">
+        <div className="w-fu">
           {children}
           {initialBlogs}
           {topStories}
