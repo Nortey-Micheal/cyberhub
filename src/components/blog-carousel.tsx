@@ -2,9 +2,8 @@
 
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { BlogCard } from "./blog-card"
-import { BlogType } from "@/lib/blogData"
 import { TopBlogCard } from "./top-blogs"
+import { BlogType } from "@/lib/type"
 
 interface BlogCarouselProps {
   posts: BlogType[]

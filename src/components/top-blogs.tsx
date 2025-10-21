@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Eye, Clock } from "lucide-react"
-import { BlogType } from "@/lib/blogData"
+import { BlogType } from "@/lib/type"
 
 export function TopBlogCard({ image, title, author, views, createdAt }: BlogType) {
   return (

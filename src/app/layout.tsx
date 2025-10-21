@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Search, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LoginButton from "@/components/ui/loginButton";
+import ReduxProvider from "@/lib/store/provider";
 
 
 const geistSans = Geist({
@@ -51,7 +52,9 @@ export default function RootLayout({
             </ul>
           </nav>
         </header>
-        <main className="w-full px-3 pb-10 max-w-[1300px] mx-auto overflow-hidden ">{children}</main>
+        <ReduxProvider>
+          <main className="w-full px-3 pb-10 max-w-[1300px] mx-auto overflow-hidden ">{children}</main>
+        </ReduxProvider>
       </body>
     </html>
   );

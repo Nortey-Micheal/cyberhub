@@ -1,17 +1,4 @@
-export type BlogType = {
-  title: string;
-  slug?: string;
-  content?: string;
-  author: string //Types.ObjectId; // Reference to User
-  tags?: string[];
-  image?: string;
-  published?: boolean;
-  createdAt?: Date;
-  updatedAt?: Date;
-  readingTime?: string | "10";
-  views?: number;
-  _id?: string;
-}
+import { BlogType } from "./type"
 
 export const latestStories: BlogType[] = [
   {

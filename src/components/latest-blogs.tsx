@@ -1,7 +1,7 @@
 import { Bookmark, MoreVertical } from "lucide-react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { BlogType } from "@/lib/blogData"
+import { BlogType } from "@/lib/type"
 
 export function LatestBlogCard({ author, title, content, createdAt, readingTime, image }: BlogType) {
   return (

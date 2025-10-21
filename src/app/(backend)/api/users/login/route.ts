@@ -15,7 +15,7 @@ export const POST = async (request:NextRequest) => {
         if (!isValid) {
             return new Response(JSON.stringify({message:"Invalid credentials"}),{status:401})
         }
-        return new Response(JSON.stringify(user),{status:200})
+        return new Response(JSON.stringify({...user._doc,password:undefined}),{status:200})
     } catch (error:any) {
         return new Response(JSON.stringify({message:"Failed to login",error:error.message}),{status:500})
     }

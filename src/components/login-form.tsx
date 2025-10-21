@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useDispatch } from "react-redux"
+import { setUser } from "@/lib/store/features/userSlice"
+import { useRouter } from "next/navigation"
 
 interface LoginFormProps {
   onSwitchToSignup: () => void
@@ -17,6 +20,8 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const dispatch = useDispatch()
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -38,18 +43,20 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
 
     try {
       // Replace with your actual API endpoint
-      const response = await fetch("/api/login", {
+      const response = await fetch("/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       })
+      const userData = await response.json()
 
       if (!response.ok) {
         throw new Error("Login failed")
       }
 
       // Handle successful login
-      console.log("Login successful")
+      dispatch(setUser(userData))
+      router.push('/')
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred")
     } finally {
