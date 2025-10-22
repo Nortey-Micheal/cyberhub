@@ -10,6 +10,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { AlertCircle, CheckCircle2, Loader2 } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { useSelector } from "react-redux"
+import { StoreState } from "@/lib/store"
 
 interface BlogFormData {
   title: string
@@ -30,11 +32,12 @@ interface BlogPostFormProps {
 }
 
 export function BlogPostForm({ onSuccess }: BlogPostFormProps) {
+  const user = useSelector((state: StoreState) => state.user);
   const [formData, setFormData] = useState<BlogFormData>({
     title: "",
     slug: "",
     content: "",
-    author: "",
+    author: user?._id || "",
     tags: [],
     image: "",
     published: false,
@@ -135,7 +138,7 @@ export function BlogPostForm({ onSuccess }: BlogPostFormProps) {
 
     setLoading(true)
     try {
-      const response = await fetch("/api/blogs", {
+      const response = await fetch("/api/blogs/createBlog", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -152,7 +155,7 @@ export function BlogPostForm({ onSuccess }: BlogPostFormProps) {
         title: "",
         slug: "",
         content: "",
-        author: "",
+        author: user?._id || "",
         tags: [],
         image: "",
         published: false,
@@ -214,6 +217,7 @@ export function BlogPostForm({ onSuccess }: BlogPostFormProps) {
             value={formData.slug}
             readOnly
             className="bg-muted"
+            disabled
           />
         </div>
 
@@ -226,9 +230,10 @@ export function BlogPostForm({ onSuccess }: BlogPostFormProps) {
             id="author"
             name="author"
             placeholder="Enter author name"
-            value={formData.author}
+            value={user?._id || formData.author}
             onChange={handleInputChange}
             className={errors.author ? "border-destructive" : ""}
+            disabled={!!user?._id}
           />
           {errors.author && <p className="text-sm text-destructive">{errors.author}</p>}
         </div>
