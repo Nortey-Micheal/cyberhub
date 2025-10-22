@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { setUser } from "@/lib/store/features/userSlice"
+import { useDispatch } from "react-redux"
+import { useRouter } from "next/router"
 
 interface SignupFormProps {
   onSwitchToLogin: () => void
@@ -22,6 +25,8 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
   })
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const dispatch = useDispatch()
+  const router = useRouter()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -66,7 +71,7 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
 
     try {
       // Replace with your actual API endpoint
-      const response = await fetch("/api/signup", {
+      const response = await fetch("/api/users/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -77,12 +82,15 @@ export default function SignupForm({ onSwitchToLogin }: SignupFormProps) {
         }),
       })
 
+      const userData = await response.json()
+
       if (!response.ok) {
         throw new Error("Signup failed")
       }
 
       // Handle successful signup
-      console.log("Signup successful")
+      dispatch(setUser(userData))
+      router.push("/")
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred")
     } finally {
