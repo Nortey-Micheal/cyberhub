@@ -55,6 +55,7 @@ export default function LoginForm({ onSwitchToSignup }: LoginFormProps) {
       }
 
       // Handle successful login
+      console.log("Login successful:", userData)
       dispatch(setUser(userData))
       router.push('/')
     } catch (err) {

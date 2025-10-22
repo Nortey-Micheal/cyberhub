@@ -2,10 +2,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
-import { Search, ShoppingBag } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import LoginButton from "@/components/ui/loginButton";
 import ReduxProvider from "@/lib/store/provider";
 
 
@@ -34,24 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>
-          <nav className="w-full flex items-center justify-between px-4 py-5 border-b border-gray-300 mb-4">
-            <div className="flex items-center lg:gap-6 gap-2">
-              <h1 className="text-xl lg:text-3xl font-serif font-bold hover:underline decoration-2 "><Link href={'/'}>Cyberhub</Link></h1>
-              <ul className="flex items-center lg:gap-4 gap-2">
-                <li className="lg:text-lg hover:underline "><Link href={'/stories'}>Stories</Link></li>
-                <li className="lg:text-lg hover:underline "><Link href={'/forum'}>Forum</Link></li>
-                <li className="lg:text-lg hover:underline "><Link href={'/store'}>Store</Link></li>
-                <li className="lg:text-lg hover:underline "><Link href={'/contact'}>Contact</Link></li>
-              </ul>
-            </div>
-            <ul className="flex items-center gap-6 lg:gap-14">
-              <li><Search /></li>
-              <li><ShoppingBag /></li>
-              <li><LoginButton/></li>
-            </ul>
-          </nav>
-        </header>
+        
         <ReduxProvider>
           <main className="w-full px-3 pb-10 max-w-[1300px] mx-auto overflow-hidden ">{children}</main>
         </ReduxProvider>
