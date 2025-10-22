@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         
         <ReduxProvider>
-          <main className="w-full px-3 pb-10 max-w-[1300px] mx-auto overflow-hidden ">{children}</main>
+          <div className="w-full">{children}</div>
         </ReduxProvider>
       </body>
     </html>

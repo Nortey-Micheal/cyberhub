@@ -15,9 +15,14 @@ export function PostBlogButton() {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)} size="lg">
+      <Button className="hidden lg:flex" onClick={() => setOpen(true)} size="lg">
         Post a Blog
-        <Send className="mr-2" />
+        <Send className="ml-2" />
+      </Button>
+
+      <Button className="flex lg:hidden" onClick={() => setOpen(true)} size="sm">
+        Post a Blog
+        <Send />
       </Button>
 
       <Dialog open={open} onOpenChange={setOpen}>
